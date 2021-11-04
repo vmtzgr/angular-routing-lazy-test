@@ -4,9 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'page-a',
+    path: '',
     component: PageAComponent
-  }
+  },
+
 ];
 
 @NgModule({
