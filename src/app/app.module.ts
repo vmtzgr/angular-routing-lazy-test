@@ -9,6 +9,9 @@ import { AuthState } from './core/stores/auth/auth.state';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { CoreModule } from './core/core.module';
+import { OAuthModule } from 'angular-oauth2-oidc';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,11 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
       AuthState
     ], { developmentMode: !environment.production}),
     NgxsLoggerPluginModule.forRoot(),
-    NgxsReduxDevtoolsPluginModule.forRoot()
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    CoreModule,
+    OAuthModule.forRoot(),
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

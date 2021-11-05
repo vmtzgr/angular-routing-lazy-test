@@ -36,7 +36,17 @@ import { Login, Logout } from './auth.action';
     return state.user!;
   }
 
-  
+  @Selector()
+  static token(state: AuthStateModel): string | null {
+    return state.user?.token!;
+  }
+
+  @Action(Login)
+  login(ctx: StateContext<AuthStateModel>, {username, password}: Login){
+    
+  }
+
+
 
   }
 
