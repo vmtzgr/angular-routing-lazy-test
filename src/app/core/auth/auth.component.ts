@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { OAuthService } from 'angular-oauth2-oidc';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -7,7 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  constructor() { }
+  loginForm: FormGroup  = this.formBuilder.group({
+    username : [null, Validators.required],
+    password : [null, Validators.required]
+  });
+
+
+
+  constructor(private formBuilder: FormBuilder, private oauthService: OAuthService, private router: Router) {
+
+  }
 
   ngOnInit(): void {
   }

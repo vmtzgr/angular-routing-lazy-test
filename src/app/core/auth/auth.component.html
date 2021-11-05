@@ -1,1 +1,32 @@
-<p>auth works!</p>
+<div class="container" >
+  <mat-card >
+    <form class="main-form" [formGroup]="loginForm" >
+      <p class="main-form-header">SCS-Login</p>
+      <mat-form-field class="example-full-width">
+           <label>
+          <input matInput type="text" name="username" placeholder="Username" formControlName="username">
+        </label>
+        <mat-error *ngIf="loginForm.hasError('username') && !loginForm.hasError('required')">
+          Please enter a valid Username
+        </mat-error>
+        <mat-error *ngIf="loginForm.hasError('required')">
+          Username is <strong>required</strong>
+        </mat-error>
+
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Passwort</mat-label>
+        <input matInput name="password" type="password" formControlName="password" required>
+      </mat-form-field>
+      <button mat-raised-button id="nee" type="submit"  >Login<mat-icon style="margin-top: 1px;">keyboard_arrow_right</mat-icon></button>
+    </form>
+  </mat-card>
+</div>
+
+
+
+
+
+
+
+
