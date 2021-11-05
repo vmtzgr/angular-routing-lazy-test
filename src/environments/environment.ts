@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  keycloak: 'http://192.168.178.43:8180/auth/',
 };
 
 /*
